@@ -1,11 +1,10 @@
-package com.yan.recyclerdecorationdemo
+package com.yan.recyclerdecorationdemo.decoration
 
 import android.graphics.Rect
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.yan.recyclerdecorationdemo.dp2px
 
 /**
  * <p>文件描述：<p>

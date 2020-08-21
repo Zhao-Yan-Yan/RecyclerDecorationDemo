@@ -1,9 +1,10 @@
-package com.yan.recyclerdecorationdemo
+package com.yan.recyclerdecorationdemo.decoration
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.yan.recyclerdecorationdemo.dp2px
 
 /**
  * <p>文件描述：<p>
@@ -25,31 +26,24 @@ class LinearDecoration(
         val isTopItem = position == 0
         val isBottomItem = (position + 1) == itemCount
 
-        outRect.set(0, realSpace / 2, 0, realSpace / 2)
-
         when {
             isTopItem -> {
-
+                if (includeTopItem) {
+                    outRect.set(0, realSpace, 0, realSpace / 2)
+                } else {
+                    outRect.set(0, 0, 0, realSpace / 2)
+                }
             }
             isBottomItem -> {
-
+                if (includeBottomItem) {
+                    outRect.set(0, realSpace / 2, 0, realSpace)
+                } else {
+                    outRect.set(0, realSpace / 2, 0, 0)
+                }
             }
             else -> {
-
+                outRect.set(0, realSpace / 2, 0, realSpace / 2)
             }
-        }
-
-        if (isTopItem && includeTopItem) {
-            //第一个item
-            outRect.set(0, realSpace, 0, realSpace / 2)
-        } else if (isTopItem && !includeTopItem) {
-            outRect.set(0, 0, 0, realSpace / 2)
-        }
-        if (isBottomItem && includeBottomItem) {
-            //最后一个item
-            outRect.set(0, realSpace / 2, 0, realSpace)
-        } else if (isBottomItem && !includeBottomItem) {
-            outRect.set(0, realSpace / 2, 0, 0)
         }
     }
 }

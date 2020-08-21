@@ -1,7 +1,6 @@
-package com.yan.recyclerdecorationdemo
+package com.yan.recyclerdecorationdemo.decoration
 
 import android.content.Context
-import android.content.res.Resources
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -9,6 +8,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.yan.recyclerdecorationdemo.dp2px
 
 class SpecialDecoration(val context: Context) : RecyclerView.ItemDecoration() {
 
