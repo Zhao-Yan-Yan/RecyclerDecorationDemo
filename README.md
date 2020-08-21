@@ -6,7 +6,7 @@ Android RecyclerView Item 分割线
 
 ![image](img/itemdecoration.gif)
 
-GridLayoutManage
+LayoutManage 为 GridLayoutManage 时常用字段
 ```kotlin
 override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
     super.onDrawOver(c, parent, state)
@@ -31,6 +31,16 @@ override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.Sta
         val isEvenRow = (row % 2) == 0
         //是否是奇数行
         val isOddRow = (row % 2) == 1
+        //一共多少行
+        val rowCount = if (itemCount % spanCount != 0) {
+            (itemCount / spanCount) + 1
+        } else {
+            itemCount / spanCount
+        }
+        //是否是第一行
+        val isTop = 1 == row
+        //是否是最后一行
+        val isBottom = rowCount == row
         val centerHorizontal = (childView.right.toFloat() + childView.left.toFloat()) / 2
         val centerVertical = (childView.top.toFloat() + childView.bottom.toFloat()) / 2val childView = parent.getChildAt(i)
         
