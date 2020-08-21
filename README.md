@@ -4,6 +4,8 @@ Android RecyclerView Item 分割线
 - LinearDecoration 线性Layout分割
 - GridDecoration 网格Layout分割
 
+![image](img/itemdecoration.gif)
+
 GridLayoutManage
 ```kotlin
 override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
