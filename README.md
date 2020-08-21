@@ -1,6 +1,8 @@
 # RecyclerDecorationDemo
 Android RecyclerView Item 分割线
 
+- LinearDecoration 线性Layout分割
+- GridDecoration 网格Layout分割
 
 GridLayoutManage
 ```kotlin
